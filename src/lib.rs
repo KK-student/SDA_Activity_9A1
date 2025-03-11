@@ -15,6 +15,12 @@ mod tests {
 }
 */
 
+pub fn reverse_string(original: String) -> String {
+    let result: String = String::new();
+
+    return result;
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
