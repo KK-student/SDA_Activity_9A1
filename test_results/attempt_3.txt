@@ -1,0 +1,17 @@
+Attempt 3: 
+   Compiling act_9a1 v0.1.0 (/home/main-user/Documents/Personal/Y3-Winter/SoftwareDes/Activities/act_9a1)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.24s
+     Running unittests src/lib.rs (target/debug/deps/act_9a1-5f0c583d437fb44e)
+
+running 2 tests
+test tests::test1 ... ok
+test tests::test2 ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests act_9a1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

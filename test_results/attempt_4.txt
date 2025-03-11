@@ -1,0 +1,63 @@
+Attempt 4: 
+   Compiling act_9a1 v0.1.0 (/home/main-user/Documents/Personal/Y3-Winter/SoftwareDes/Activities/act_9a1)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.26s
+     Running unittests src/lib.rs (target/debug/deps/act_9a1-5f0c583d437fb44e)
+
+running 3 tests
+test tests::test2 ... ok
+test tests::test1 ... FAILED
+test tests::test3 ... FAILED
+
+failures:
+
+---- tests::test1 stdout ----
+thread 'tests::test1' panicked at src/lib.rs:41:9:
+assertion `left == right` failed
+  left: "d c b a "
+ right: ""
+stack backtrace:
+   0: rust_begin_unwind
+             at /rustc/e71f9a9a98b0faf423844bf0ba7438f29dc27d58/library/std/src/panicking.rs:665:5
+   1: core::panicking::panic_fmt
+             at /rustc/e71f9a9a98b0faf423844bf0ba7438f29dc27d58/library/core/src/panicking.rs:76:14
+   2: core::panicking::assert_failed_inner
+   3: core::panicking::assert_failed
+             at /opt/rust-bin-1.84.1/lib/rustlib/src/rust/library/core/src/panicking.rs:373:5
+   4: act_9a1::tests::test1
+             at ./src/lib.rs:41:9
+   5: act_9a1::tests::test1::{{closure}}
+             at ./src/lib.rs:36:15
+   6: core::ops::function::FnOnce::call_once
+             at /opt/rust-bin-1.84.1/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   7: core::ops::function::FnOnce::call_once
+             at /rustc/e71f9a9a98b0faf423844bf0ba7438f29dc27d58/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+---- tests::test3 stdout ----
+thread 'tests::test3' panicked at src/lib.rs:57:9:
+assertion failed: result == "edcba".to_string()
+stack backtrace:
+   0: rust_begin_unwind
+             at /rustc/e71f9a9a98b0faf423844bf0ba7438f29dc27d58/library/std/src/panicking.rs:665:5
+   1: core::panicking::panic_fmt
+             at /rustc/e71f9a9a98b0faf423844bf0ba7438f29dc27d58/library/core/src/panicking.rs:76:14
+   2: core::panicking::panic
+             at /rustc/e71f9a9a98b0faf423844bf0ba7438f29dc27d58/library/core/src/panicking.rs:148:5
+   3: act_9a1::tests::test3
+             at ./src/lib.rs:57:9
+   4: act_9a1::tests::test3::{{closure}}
+             at ./src/lib.rs:53:15
+   5: core::ops::function::FnOnce::call_once
+             at /opt/rust-bin-1.84.1/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+   6: core::ops::function::FnOnce::call_once
+             at /rustc/e71f9a9a98b0faf423844bf0ba7438f29dc27d58/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+
+failures:
+    tests::test1
+    tests::test3
+
+test result: FAILED. 1 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--lib`
