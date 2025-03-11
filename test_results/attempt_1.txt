@@ -1,0 +1,19 @@
+Attempt 1: 
+Compiling act_9a1 v0.1.0 (/home/main-user/Documents/Personal/Y3-Winter/SoftwareDes/Activities/act_9a1)
+warning: unused import: `super::*`
+  --> src/lib.rs:20:9
+   |
+20 |     use super::*;
+   |         ^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+error[E0425]: cannot find function `reverse_string` in this scope
+  --> src/lib.rs:25:30
+   |
+25 |         let result: String = reverse_string(original);
+   |                              ^^^^^^^^^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+warning: `act_9a1` (lib test) generated 1 warning
+error: could not compile `act_9a1` (lib test) due to 1 previous error; 1 warning emitted
