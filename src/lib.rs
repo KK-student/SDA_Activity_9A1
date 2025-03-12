@@ -64,5 +64,14 @@ mod tests {
         let result: String = reverse_string(&original);
         assert_eq!(result, "abedc.?".to_string());
     }
+
+    #[test]
+    fn test5() {
+        //Test if the reverse_string function returns the reversed version of "?.abcde" ignoring
+        //the punctuation.
+        let original: String = "?.abcde".to_string();
+        let result: String = reverse_string(&original);
+        assert_eq!(result, "?.cbade".to_string());
+    }
 }
 
