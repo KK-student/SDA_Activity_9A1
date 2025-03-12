@@ -1,5 +1,10 @@
 use std::char;
 
+/*
+* Description: Reverses a String, ignoring all punctuation characters ('.', ',', '?', ';', '!', ':', '\'', '(', ')', '[', ']', '"', '-', '_', '/', '@', '{', '}', '*'). 
+* Parameters: 
+*   original: The input String to reverse. 
+*/
 pub fn reverse_string(original: &String) -> String {
     let length: usize = original.len();
 
