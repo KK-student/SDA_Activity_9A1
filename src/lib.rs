@@ -1,14 +1,14 @@
 use std::char;
 
 /*
-* Description: Reverses a String, ignoring all punctuation characters ('.', ',', '?', ';', '!', ':', '\'', '(', ')', '[', ']', '"', '-', '_', '/', '@', '{', '}', '*'). 
+* Description: Reverses a String, ignoring all punctuation characters and numbers ('.', ',', '?', ';', '!', ':', '\'', '(', ')', '[', ']', '"', '-', '_', '/', '@', '{', '}', '*', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'). 
 * Parameters: 
 *   original: The input String to reverse. 
 */
 pub fn reverse_string(original: &String) -> String {
     let length: usize = original.len();
 
-    let punctuation: Vec<char> = Vec::from(['.', ',', '?', ';', '!', ':', '\'', '(', ')', '[', ']', '"', '-', '_', '/', '@', '{', '}', '*']);
+    let punctuation_and_numbers: Vec<char> = Vec::from(['.', ',', '?', ';', '!', ':', '\'', '(', ')', '[', ']', '"', '-', '_', '/', '@', '{', '}', '*', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
 
     let mut result_chars: Vec<u8> = Vec::from(original.as_bytes());
 
@@ -19,7 +19,7 @@ pub fn reverse_string(original: &String) -> String {
             let temp: char = result_chars[r_i] as char;
 
             let c: char = result_chars[i] as char; 
-            if !(punctuation.contains(&temp) || punctuation.contains(&c)) {
+            if !(punctuation_and_numbers.contains(&temp) || punctuation_and_numbers.contains(&c)) {
             result_chars[r_i] = result_chars[i];
             result_chars[i] = temp as u8;
             }
@@ -83,6 +83,14 @@ mod tests {
         original = "abc.d".to_string();
         result = reverse_string(&original);
         assert_eq!(result, "dbc.a".to_string());
+    }
+
+    #[test]
+    fn test7() {
+        //Testing numbers. 
+        let original: String = "ab.c8de".to_string();
+        let result: String = reverse_string(&original);
+        assert_eq!(result, "ed.c8ba".to_string());
     }
 }
 
