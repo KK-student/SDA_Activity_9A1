@@ -73,5 +73,21 @@ mod tests {
         let result: String = reverse_string(&original);
         assert_eq!(result, "?.cbade".to_string());
     }
+
+    #[test]
+    fn test6() {
+        //Testing punctuation in random places. 
+        let mut original: String = "ab.c?de".to_string();
+        let mut result: String = reverse_string(&original);
+        assert_eq!(result, "ed.c?ba".to_string());
+
+        original = "abc.de".to_string();
+        result = reverse_string(&original);
+        assert_eq!(result, "edc.ba".to_string());
+
+        original = "abc.d".to_string();
+        result = reverse_string(&original);
+        assert_eq!(result, "dbc.a".to_string());
+    }
 }
 
