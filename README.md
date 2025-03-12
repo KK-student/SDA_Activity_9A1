@@ -8,6 +8,9 @@ In the terminal, run:
 cargo test
 ```
 
+## Where is my source code? 
+In the src/lib.rs file. The programming language used is Rust. 
+
 ## Where are my tests? 
-You can find the results of the tests in the ./test_results folder. The code for the tests is in the lib.rs file. 
+You can find the results of the tests in the ./test_results folder. The code for the tests is in the src/lib.rs file. 
 
