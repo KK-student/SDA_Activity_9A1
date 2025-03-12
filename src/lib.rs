@@ -4,49 +4,21 @@ pub fn reverse_string(original: &String) -> String {
     let original_bytes = original.as_bytes();
     let length: usize = original.len();
 
-    /*
-    let mut result: String = String::with_capacity(length);
+    let punctuation: Vec<char> = Vec::from(['.', ',', '?', ';', '!', ':', '\'', '(', ')', '[', ']', '"', '-', '_', '/', '@', '{', '}', '*']);
+
+    let mut result_chars: Vec<u8> = Vec::from(original.as_bytes());
 
     {
         let mut i: usize = 0;
-        while i < length {
-            result.push(' ');
-
-            i += 1;
-        }
-    }
-
-    {
-        let mut i: usize = 0;
-        while i < length {
+        while i < length / 2 {
             let r_i = length - 1 - i;
-            //result.insert(r_i, original_bytes[i] as char);
-            //result.replace_range(r_i..r_i, &original_bytes[i].to_string()[0..0]);
-            result.chars().nth(r_i).unwrap() = original_bytes[i];
+            let temp: char = result_chars[r_i] as char;
 
-            i += 1;
-        }
-    }
-
-    return result;
-    */
-
-    let mut result_chars: Vec<u8> = Vec::with_capacity(length);
-
-    {
-        let mut i: usize = 0;
-        while i < length {
-            result_chars.push(' ' as u8);
-
-            i += 1;
-        }
-    }
-
-    {
-        let mut i: usize = 0;
-        while i < length {
-            let r_i = length - 1 - i;
-            result_chars[r_i] = original_bytes[i];
+            let c: char = result_chars[i] as char; 
+            if !(punctuation.contains(&temp) || punctuation.contains(&c)) {
+            result_chars[r_i] = result_chars[i];
+            result_chars[i] = temp as u8;
+            }
 
             i += 1;
         }
@@ -82,6 +54,15 @@ mod tests {
         let original: String = "abcde".to_string();
         let result: String = reverse_string(&original);
         assert_eq!(result, "edcba".to_string());
+    }
+
+    #[test]
+    fn test4() {
+        //Test if the reverse_string function returns the reversed version of "abcde.?" ignoring
+        //the punctuation.
+        let original: String = "abcde.?".to_string();
+        let result: String = reverse_string(&original);
+        assert_eq!(result, "abedc.?".to_string());
     }
 }
 
