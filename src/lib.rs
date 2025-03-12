@@ -1,7 +1,6 @@
 use std::char;
 
 pub fn reverse_string(original: &String) -> String {
-    let original_bytes = original.as_bytes();
     let length: usize = original.len();
 
     let punctuation: Vec<char> = Vec::from(['.', ',', '?', ';', '!', ':', '\'', '(', ')', '[', ']', '"', '-', '_', '/', '@', '{', '}', '*']);
@@ -30,15 +29,6 @@ pub fn reverse_string(original: &String) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    //#[test] 
-    fn test1() {
-        //Test if there is a reverse_string method that accepts 1 String parameter and returns an
-        //empty string. 
-        let original: String = "abcd".to_string(); //Could be any string. 
-        let result: String = reverse_string(&original);
-        assert_eq!(result, String::new());
-    }
 
     #[test]
     fn test2() {
